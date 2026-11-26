@@ -1,190 +1,223 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Cadena | Mi página web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
 
-<!-- ======================================================
-  ✏️  EDITA ESTAS 4 LÍNEAS CON TU INFORMACIÓN (lo más importante para el SEO)
-======================================================= -->
-<title>Michael Fabian Cadena Candia · Estudiante de Ciencia de la Computación</title>
-<meta name="description" content="Michael Fabian Cadena Candia es estudiante de Ciencia de la Computación en la Universidad Católica San Pablo (Arequipa, Perú). Conoce su perfil y contacto.">
-<link rel="canonical" href="https://michaelcadena-lp.github.io/">
-<meta name="robots" content="index, follow">
+        header {
+            background-color: #26384a;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
 
-<!-- Open Graph (vista previa al compartir el link) -->
-<meta property="og:type" content="profile">
-<meta property="og:title" content="Michael Fabian Cadena Candia">
-<meta property="og:description" content="Estudiante de Ciencia de la Computación en la Universidad Católica San Pablo, Arequipa, Perú.">
-<meta property="og:url" content="https://michaelcadena-lp.github.io/">
+        header h1 {
+            margin-bottom: 5px;
+        }
 
-<!-- Datos estructurados para Google (ayuda a que te reconozca como Persona) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Michael Fabian Cadena Candia",
-  "jobTitle": "Estudiante de Inteligencia Arificial",
-  "url": "https://michaelcadena-lp.github.io/",
-  "email": "michael.cadena@ucsp.edu.pe",
-  "alumniOf": {
-    "@type": "CollegeOrUniversity",
-    "name": "Universidad Católica San Pablo",
-    "url": "https://ucsp.edu.pe/"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Arequipa",
-    "addressCountry": "PE"
-  }
-}
-</script>
+        nav {
+            background-color: #34495e;
+            text-align: center;
+            padding: 12px;
+        }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            display: inline-block;
+        }
 
-<style>
-  :root{
-    --paper:#EEF1F4;
-    --card:#FFFFFF;
-    --ink:#16222E;
-    --muted:#5C6B73;
-    --accent:#E2A33D;
-    --line:#D7DCE1;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  body{
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Inter',sans-serif;
-    line-height:1.55;
-    -webkit-font-smoothing:antialiased;
-  }
-  a{color:inherit; text-decoration:none;}
-  a:focus-visible, button:focus-visible{outline:3px solid var(--accent); outline-offset:3px;}
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-  .wrap{max-width:720px; margin:0 auto; padding:0 24px;}
+        main {
+            max-width: 900px;
+            margin: 25px auto;
+            padding: 0 15px;
+        }
 
-  header.top{padding:32px 0 0;}
-  .mono-tag{
-    font-family:'JetBrains Mono',monospace;
-    font-size:13px;
-    letter-spacing:.04em;
-    color:var(--muted);
-    text-transform:uppercase;
-  }
+        section {
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 22px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+        }
 
-  .hero{padding:48px 0 32px; border-bottom:1px solid var(--line);}
-  h1{
-    font-family:'Fraunces',serif;
-    font-weight:600;
-    font-size:clamp(38px,7vw,58px);
-    line-height:1.05;
-    margin:14px 0 10px;
-  }
-  .role{font-size:19px; color:var(--muted); margin-bottom:18px;}
-  .bio{font-size:16px; max-width:560px; color:var(--ink);}
-  .bio strong{color:var(--ink);}
+        h2 {
+            color: #26384a;
+            border-bottom: 2px solid #d7e0e8;
+            padding-bottom: 8px;
+        }
 
-  section{padding:40px 0; border-bottom:1px solid var(--line);}
-  section:last-of-type{border-bottom:none;}
-  h2{
-    font-family:'JetBrains Mono',monospace;
-    font-size:13px;
-    letter-spacing:.08em;
-    text-transform:uppercase;
-    color:var(--muted);
-    margin-bottom:18px;
-  }
+        .curso, .persona {
+            background-color: #f7f9fb;
+            border: 1px solid #e1e5e8;
+            padding: 12px;
+            margin: 12px 0;
+            border-radius: 5px;
+        }
 
-  .links{display:grid; gap:10px;}
-  .link-card{
-    display:flex; justify-content:space-between; align-items:center;
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:10px;
-    padding:14px 18px;
-    transition:transform .15s ease, border-color .15s ease;
-  }
-  .link-card:hover{transform:translateX(4px); border-color:var(--accent);}
-  .link-card .label{font-weight:500;}
-  .link-card .arrow{color:var(--accent); font-family:'JetBrains Mono',monospace;}
+        a {
+            color: #1769aa;
+        }
 
-  /* --- Elemento distintivo: simulación real de cómo te verá Google --- */
-  .serp{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:12px;
-    padding:22px 24px;
-  }
-  .serp-title{color:#1558D6; font-size:19px; margin-bottom:3px;}
-  .serp-url{color:#202124; font-size:13px; opacity:.65; margin-bottom:8px;}
-  .serp-desc{color:#4D5156; font-size:14px; line-height:1.5;}
-  .serp-caption{
-    margin-top:14px; font-size:13px; color:var(--muted);
-    font-family:'JetBrains Mono',monospace;
-  }
+        .boton {
+            display: inline-block;
+            background-color: #26384a;
+            color: white;
+            padding: 9px 14px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 8px;
+        }
 
-  footer{padding:28px 0 48px; font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--muted);}
+        .boton:hover {
+            background-color: #405b75;
+        }
 
-  @media (prefers-reduced-motion: reduce){
-    .link-card{transition:none;}
-  }
-</style>
+        footer {
+            background-color: #26384a;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                margin: 5px 8px;
+            }
+
+            section {
+                padding: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<div class="wrap">
+    <header>
+        <h1>Michael Fabian Cadena Candia</h1>
+        <p>Estudiante de Inteligencia Artificial</p>
+        <p>Universidad Católica San Pablo - Arequipa, Perú</p>
+    </header>
 
-  <header class="top">
-    <span class="mono-tag">Ficha personal</span>
-  </header>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#cursos">Cursos</a>
+        <a href="#companeros">Compañeros</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
 
-  <section class="hero">
-    <!-- ✏️ Tu nombre debe ir EXACTO como lo buscas en Google -->
-    <h1>Michael Fabian Cadena Candia</h1>
-    <p class="role">Estudiante de Inteligencia Artificial · Arequipa, Perú</p>
-    <p class="bio">
-      Michael Fabian Cadena Candia estudia Inteligencia Artificial en la
-      <strong>Universidad Católica San Pablo</strong> (UCSP), en Arequipa, Perú.
-      Le interesa el desarrollo de software y la tecnología, y esta página
-      forma parte de su presencia digital como estudiante.
-    </p>
-  </section>
+    <main>
+        <section id="inicio">
+            <h2>Bienvenido a mi página web</h2>
+            <p>
+                Esta página tiene como objetivo presentar información sobre mí,
+                mi formación académica, los cursos que llevo y algunas personas
+                con las que comparto mi etapa universitaria.
+            </p>
+            <p>
+                También podrás encontrar enlaces a mis redes profesionales y
+                a las páginas web de algunos de mis compañeros.
+            </p>
+        </section>
 
-  <section>
-    <h2>Contacto y enlaces</h2>
-    <div class="links">
-      <a class="link-card" href="mailto:michael.cadena@ucsp.edu.pe">
-        <span class="label">michael.cadena@ucsp.edu.pe</span><span class="arrow">→</span>
-      </a>
-      <a class="link-card" href="https://ucsp.edu.pe/" target="_blank" rel="noopener">
-        <span class="label">Universidad Católica San Pablo</span><span class="arrow">→</span>
-      </a>
-      <!-- ✏️ Cuando tengas LinkedIn, GitHub o Instagram, copia un bloque <a class="link-card"> como los de arriba y agrega tu link -->
-    </div>
-  </section>
+        <section id="sobre-mi">
+            <h2>Sobre mí</h2>
+            <p>
+                Mi nombre es Michael Fabian Cadena Candia y soy estudiante de
+                la carrera de Inteligencia Artificial en la Universidad Católica
+                San Pablo, en Arequipa.
+            </p>
+            <p>
+                Me interesa aprender sobre tecnología, programación y el desarrollo
+                de nuevas herramientas digitales. Actualmente estoy desarrollando
+                mis conocimientos en diferentes áreas de mi carrera y buscando
+                mejorar mis habilidades para aplicarlas en proyectos.
+            </p>
+            <p>
+                Me considero una persona que busca aprender cosas nuevas y que
+                está interesada en seguir desarrollándose tanto académica como
+                profesionalmente.
+            </p>
+            <a class="boton" href="https://www.linkedin.com/in/michael-fabian-cadena-candia-099b07416/" target="_blank" rel="noopener noreferrer">
+                Mi perfil de LinkedIn
+            </a>
+        </section>
 
-  <section>
-    <h2>Así te mostrará Google</h2>
-    <div class="serp">
-      <div class="serp-title">Michael Fabian Cadena Candia · Estudiante de Inteligencia Artificial</div>
-      <div class="serp-url">https://michaelcadena-lp.github.io</div>
-      <div class="serp-desc">Michael Fabian Cadena Candia es estudiante de Inteligencia Arificial en la Universidad Católica San Pablo (Arequipa, Perú). Conoce su perfil y contacto.</div>
-    </div>
-    <p class="serp-caption">↳ Este recuadro toma el título y la descripción que escribiste arriba en el &lt;head&gt; del archivo.</p>
-  </section>
+        <section id="cursos">
+            <h2>Mis cursos</h2>
+            <p>Estos son algunos de los cursos que forman parte de mi formación académica:</p>
 
-  <footer>
-    © <span id="year"></span> Michael Fabian Cadena Candia
-  </footer>
+            <div class="curso">
+                <h3>Cálculo Diferencial e Integral I</h3>
+                <p>Curso relacionado con el estudio de funciones, límites, derivadas e integrales.</p>
+                <p>Profesora: Peña Casa Matilde</p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/matilde-pe%C3%B1a-casa-45ba2933/" target="_blank" rel="noopener noreferrer">Ver perfil</a></p>
+            </div>
 
-</div>
+            <div class="curso">
+                <h3>Gnoseología y Tecnociencia</h3>
+                <p>Curso que aborda temas relacionados con el conocimiento, la ciencia y la tecnología.</p>
+                <p>Profesora: Loayza Cruz Kristel Gisselle</p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/kristel-gisselle-loayza-cruz-abb3b039b/" target="_blank" rel="noopener noreferrer">Ver perfil</a></p>
+            </div>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+            <div class="curso">
+                <h3>Introducción a la Computación</h3>
+                <p>Curso introductorio a los conceptos fundamentales de la computación.</p>
+                <p>Profesor: Ernesto Cuadros Vargas</p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/ecuadrosv/" target="_blank" rel="noopener noreferrer">Ver perfil</a></p>
+            </div>
+        </section>
+
+        <section id="companeros">
+            <h2>Páginas web de mis compañeros</h2>
+            <p>A continuación, comparto los enlaces a las páginas web de algunos compañeros de la carrera.</p>
+
+            <div class="persona">
+                <h3>Edgar Sebastian Calle Torres</h3>
+                <p><a href="https://polarberto.github.io/EDGAR-SEBASTIAN-CALLE-TORRES/" target="_blank" rel="noopener noreferrer">Visitar su página web</a></p>
+            </div>
+
+            <div class="persona">
+                <h3>Franco Carlooss</h3>
+                <p><a href="https://francocarlooss.github.io/francocarlooss.github.io./" target="_blank" rel="noopener noreferrer">Visitar su página web</a></p>
+            </div>
+
+            <div class="persona">
+                <h3>Omar Palomino</h3>
+                <p><a href="https://omarpalomino-max.github.io/mi-primera-pagina-web/" target="_blank" rel="noopener noreferrer">Visitar su página web</a></p>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Si deseas conocer más sobre mí, puedes visitar mi perfil profesional:</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/michael-fabian-cadena-candia-099b07416/" target="_blank" rel="noopener noreferrer">Michael Fabian Cadena Candia</a></p>
+            <p>Correo: <a href="mailto:michael.cadena@ucsp.edu.pe">michael.cadena@ucsp.edu.pe</a></p>
+            <p>Mi página web: <a href="https://michaelcadena-lp.github.io/">michaelcadena-lp.github.io</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Michael Fabian Cadena Candia</p>
+        <p>Universidad Católica San Pablo - Arequipa, Perú</p>
+    </footer>
 
 </body>
 </html>
